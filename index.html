@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Fraunces">
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+   
+    .layout{
+      display: flex;
+      margin: 50px 0px;
+      justify-content: center;
+    }
+
+    :root {
+      --Darkcyan: hsl(158, 36%, 37%);
+      --DarkcyanHover: hsl(158, 77%, 17%);
+      --Cream: hsl(30, 38%, 92%);
+      --Verydarkblue: hsl(212, 21%, 14%);
+      --Darkgrayishblue: hsl(228, 12%, 48%);
+      --White: hsl(0, 0%, 100%);
+      
+    }
+    body{
+      background-color: var(--Cream);
+      font-family: 'Montserrat' ;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    
+    .card{
+      width: 500px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .card-body{
+      display: flex;
+      flex-direction: row;
+    }
+    .card_image_container{
+      width: 50%;
+    }
+    .card_content_container{
+      background-color: var(--White);
+      width: 50%;
+      padding: 1.5rem 2rem;
+    }
+    .content_title{
+      font-size: 0.5rem;
+      color: var(--Darkgrayishblue);
+      text-transform: uppercase;
+    }
+    .content_heading{
+      font-family: 'Fraunces';
+      font-size: 1.45rem;
+      color: var(--Verydarkblue);
+      padding: 5px 0px 5px;
+    }
+    .content_details{
+      font-size: 0.7rem;
+      color: var(--Darkgrayishblue);
+      padding: 0px 0px 5px;
+    }
+    .content_price_container{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 5px 0px 10px;
+    }
+    .price_text{
+      font-family: 'Fraunces';
+      font-size: 1.5rem;
+      color : var(--Darkcyan) ;
+      padding: 0px 5px 0px 0px;
+    }
+    .discount_text{
+      font-size: 0.7rem;
+      text-decoration: line-through;
+      color: var(--Darkgrayishblue);
+
+    }
+    .content_button_container{
+      background: var(--Darkcyan) ;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+      display: flex;
+      padding: 10px;
+      width: 100%;
+      justify-content: center;
+      border-radius: 5px;
+      
+    }
+    .content_button_container:hover{
+      background: var(--DarkcyanHover)
+    }
+    .button-icon{
+      margin-right : 10px;
+    }
+    .button-text{
+      color: var(--White);
+    }
+
+
+    .card_image{
+      width: 100%
+    }
+    
+    .image-mobile{
+      display:none;
+    }
+    .image-desktop{
+      display: block;
+    }
+
+    /* mobile */
+    @media only screen and (max-width: 375px) {
+      
+      .card{
+        width: 300px;
+        height: auto;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+      .card-body{
+        display: flex;
+        flex-direction: column;
+      }
+      .image-desktop{
+        display: none;
+      }
+      .image-mobile{
+        display: block;
+      }
+      .card_image_container{
+        width: 100%;
+      }
+      .card_content_container{
+        
+        width: 100%;
+       
+      }
+      
+
+    }
+
+  </style>
+</head>
+<body>
+
+
+
+  <div class="layout">
+
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="card_image_container">
+            <img class="card_image  image-desktop" src="images/image-product-desktop.jpg" alt="" srcset=""/>
+            <img class="card_image image-mobile" src="images/image-product-mobile.jpg" alt="" srcset=""/>
+          </div>
+          <div class="card_content_container">
+            <div class="content_title"> Perfume</div>
+            <div class="content_heading"> Gabrielle Essence Eau De Parfum</div>
+            <div class="content_details">
+              A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+              Perfumer-Creator for the House of CHANEL.
+            </div>
+            <div class="content_price_container">
+              <div class="price_text">$149.99</div>
+              <div class="discount_text">$169.99</div>
+            </div>
+            <button type="button" class="content_button_container">
+              <div class="button-icon">
+                <img src="images/icon-cart.svg" alt="icon"/>
+              </div>
+              <div class="button-text">Add to Cart</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/aderounmu">Aderounmu Bamgbose</a>.
+  </div>
+</body>
+</html>
